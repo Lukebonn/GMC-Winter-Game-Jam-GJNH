@@ -38,20 +38,20 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: MainPet
-    uniqueID: 1493328745
-    locked: 0
-  - name: Foreground
-    uniqueID: 1421977611
-    locked: 0
-  - name: Default
-    uniqueID: 0
+  - name: Background
+    uniqueID: 2976612389
     locked: 0
   - name: Middleground
     uniqueID: 1511126931
     locked: 0
-  - name: Background
-    uniqueID: 2976612389
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 1421977611
+    locked: 0
+  - name: MainPet
+    uniqueID: 1493328745
     locked: 0
   m_RenderingLayers:
   - Default
