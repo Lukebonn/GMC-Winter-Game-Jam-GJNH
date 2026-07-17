@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        Debug.Log("Update running");
+        //Debug.Log("Update running");
         //Debug.Log($"H: {horizontal} V: {vertical}");
 
         float horizontal = Input.GetAxisRaw("Horizontal");

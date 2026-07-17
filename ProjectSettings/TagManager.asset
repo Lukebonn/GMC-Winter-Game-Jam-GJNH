@@ -53,6 +53,9 @@ TagManager:
   - name: MainPet
     uniqueID: 1493328745
     locked: 0
+  - name: UI
+    uniqueID: 172319293
+    locked: 0
   m_RenderingLayers:
   - Default
   m_MigratedRenderPipelines: []
