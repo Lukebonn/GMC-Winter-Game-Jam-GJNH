@@ -10,6 +10,7 @@ public class FollowMouse : MonoBehaviour
 
     void Awake()
     {
+        Cursor.visible = false;
         sr = GetComponent<SpriteRenderer>();
     }
     void Update()

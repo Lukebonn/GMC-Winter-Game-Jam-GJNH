@@ -42,21 +42,24 @@ public class Pet : MonoBehaviour
     public void SetHealth(float healthChange)
     {
         currHealth += healthChange;
-
+        healthBar.FlashGreen(healthChange);
         if (currHealth >= 100)
         {
             Evolve();
         }
-        if (currHealth <= 0)
+        else if (currHealth <= 0)
         {
             Devolve();
-        }
+        } 
+        //else
+        //{
+        //    currHealth += healthChange;
+        //}
 
         healthBar.SetHealth(currHealth);
-        healthBar.FlashGreen(healthChange);
     }
 
-    public void Evolve()
+    private void Evolve()
     {
         if (evolutionNum >= 4)
         {
@@ -68,7 +71,7 @@ public class Pet : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = evolutions[evolutionNum];
     }
 
-    public void Devolve()
+    private void Devolve()
     {
         if (evolutionNum <= 0)
         {

@@ -20,6 +20,10 @@ public class enemyPrefab : MonoBehaviour
     private int currentWaypoint = 0;
     private float delay;
 
+    [SerializeField] private Pet pet;
+
+    public static event Action OnEnemyHit;
+
     // Animations
     [SerializeField] private Animator _animator;
 
@@ -153,7 +157,16 @@ public class enemyPrefab : MonoBehaviour
             hiding = true;
             sr.enabled = false;
             currentWaypoint++;
-            yield return new WaitForSeconds(delay);
+            if (currentWaypoint == path.Length)
+            {
+                pet.SetHealth(-10f);
+                OnEnemyHit?.Invoke();
+            }
+            else
+            {
+                yield return new WaitForSeconds(delay);
+            }
         }
+        
     }
 }

@@ -13,7 +13,6 @@ public class PetManager : MonoBehaviour
     void Start()
     {
         enemyDropZone = enemyDropzoneObject.GetComponent<BoxCollider2D>();
-        Cursor.visible = false;
     }
     private void OnEnable()
     {

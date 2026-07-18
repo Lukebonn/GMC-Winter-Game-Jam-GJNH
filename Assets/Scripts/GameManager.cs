@@ -1,13 +1,31 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    //[SerializeField] private KeyCode[] triggerKeys;
     public static bool spawning = false;
+    [SerializeField] private TextMeshProUGUI numEnemyHits;
+    private float currNum = 0f;
     void Start()
     {
         spawning = true;
+        numEnemyHits.SetText(((int)currNum).ToString());
+    }
+    private void OnEnable()
+    {
+        enemyPrefab.OnEnemyHit += PetHit;
+    }
+    private void OnDisable()
+    {
+        enemyPrefab.OnEnemyHit -= PetHit;
+    }
+    private void PetHit()
+    {
+        //Debug.Log($"PetHit at {Time.time}");
+        currNum++;
+        numEnemyHits.SetText(((int)currNum).ToString());
     }
 
     //public UnityEvent onKeyPressed;
