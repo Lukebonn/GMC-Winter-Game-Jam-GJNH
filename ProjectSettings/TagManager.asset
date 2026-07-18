@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Enemies
   - 
   - 
   - 
@@ -49,6 +49,9 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 1421977611
+    locked: 0
+  - name: Enemies
+    uniqueID: 1784905589
     locked: 0
   - name: MainPet
     uniqueID: 1493328745

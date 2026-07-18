@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fa9559ad68f4b844d9520e6b5ce46ee9
+guid: b669d4a924c92814a9bcd3ff044bdf19
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8001869892075530964
-    second: claw_0
+      213: 492294312700710392
+    second: Healthbar_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -49,9 +49,9 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.5109022, y: 0.03511786}
-  spritePixelsToUnits: 32
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: claw_0
+      name: Healthbar_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 2
-        width: 191
-        height: 213
-      alignment: 9
-      pivot: {x: 0.49662414, y: 0.032300193}
+        x: 299
+        y: 125
+        width: 1334
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4da2e08654a5c0f60800000000000000
-      internalID: 8001869892075530964
+      spriteID: 8fd8871b11bf4d600800000000000000
+      internalID: 492294312700710392
       vertices: []
       indices: 
       edges: []
@@ -125,8 +125,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      claw_0: 8001869892075530964
+      Healthbar_0: 492294312700710392
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

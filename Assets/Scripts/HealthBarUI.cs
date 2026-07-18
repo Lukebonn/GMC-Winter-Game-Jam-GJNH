@@ -5,10 +5,10 @@ using System.Collections;
 
 public class HealthBarUI : MonoBehaviour
 {
-    public float Health = 80;
+    public float Health = 20;
     public float MaxHealth = 100;
-    public float Width = 1800;
-    public float Height = 100;
+    public float Width = 1350;
+    public float Height = 50;
 
     [SerializeField]
     private RectTransform healthBar;

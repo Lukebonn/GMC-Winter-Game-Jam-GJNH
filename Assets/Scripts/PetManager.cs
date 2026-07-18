@@ -1,0 +1,40 @@
+using UnityEngine;
+
+public class PetManager : MonoBehaviour
+{
+    [SerializeField] private GameObject enemyDropzoneObject;
+    [SerializeField] int pointsPerEnemy = 5;
+    [SerializeField] private Pet pet;
+
+    private BoxCollider2D enemyDropZone;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        enemyDropZone = enemyDropzoneObject.GetComponent<BoxCollider2D>();
+    }
+    private void OnEnable()
+    {
+        DragAll.OnEnemyDropped += HandleRelease;
+    }
+
+    private void OnDisable()
+    {
+        DragAll.OnEnemyDropped -= HandleRelease;
+    }
+
+    private void HandleRelease(Vector2 position)
+    {
+        Vector2 mousePos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+        if (enemyDropZone.OverlapPoint(position))
+        {
+            pet.SetHealth(pointsPerEnemy);
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
