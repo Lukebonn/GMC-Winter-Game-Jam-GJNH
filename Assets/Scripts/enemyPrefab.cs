@@ -24,7 +24,12 @@ public class enemyPrefab : MonoBehaviour
     [SerializeField] private Animator _animator;
 
     // Dragging stuff
-    //private Vector3 offset;
+    private BoxCollider2D enemyCollider;
+
+    void Awake()
+    {
+        enemyCollider = GetComponent<BoxCollider2D>();
+    }
 
     public void Initialize(
         Vector2[] path,
@@ -72,6 +77,22 @@ public class enemyPrefab : MonoBehaviour
     {
         grabbed = false;
         Debug.Log("Enemy released");
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Waypoint"))
+        {
+            enemyCollider.enabled = false;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Waypoint"))
+        {
+            enemyCollider.enabled = true;
+        }
     }
 
     public void destroyEnemy()

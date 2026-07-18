@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 54749cd79026e2543a4bc92fa1c12bda
+guid: 6c6a6ee3e88c7224b8b254f88226049a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4622967980092967014
-    second: Tree 1 bunch png_0
+      213: 8346113465572607323
+    second: small rock _0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tree 1 bunch png_0
+      name: small rock _0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 3
-        width: 51
-        height: 56
+        x: 16
+        y: 0
+        width: 40
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 668427562e4182040800000000000000
-      internalID: 4622967980092967014
+      spriteID: b554f823af953d370800000000000000
+      internalID: 8346113465572607323
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Tree 1 bunch png_0: 4622967980092967014
+      small rock _0: 8346113465572607323
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
