@@ -61,10 +61,12 @@ public class Pet : MonoBehaviour
 
     private void Evolve()
     {
-        if (evolutionNum >= 4)
+        if (evolutionNum >= evolutions.Count - 1)
         {
             SceneManager.LoadScene("Win Screen");
+            return;
         }
+
         evolutionNum++;
         OnEvolve?.Invoke(evolutionNum);
         currHealth = 20;
@@ -76,10 +78,10 @@ public class Pet : MonoBehaviour
         if (evolutionNum <= 0)
         {
             SceneManager.LoadScene("Lose Screen");
+            return;
         }
         evolutionNum--;
-        OnEvolve?.Invoke(evolutionNum);
-        currHealth = 20;
+        currHealth = 100;
         GetComponent<SpriteRenderer>().sprite = evolutions[evolutionNum];
     }
 

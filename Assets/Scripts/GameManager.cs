@@ -7,19 +7,28 @@ public class GameManager : MonoBehaviour
 {
     public static bool spawning = false;
     [SerializeField] private TextMeshProUGUI numEnemyHits;
+    [SerializeField] private GameObject LevelUpUI;
     private float currNum = 0f;
     void Start()
     {
         spawning = true;
         numEnemyHits.SetText(((int)currNum).ToString());
+        LevelUpUI.SetActive(false);
     }
     private void OnEnable()
     {
         enemyPrefab.OnEnemyHit += PetHit;
+        Pet.OnEvolve += LevelUpIndicator;
     }
     private void OnDisable()
     {
         enemyPrefab.OnEnemyHit -= PetHit;
+        Pet.OnEvolve -= LevelUpIndicator;
+    }
+    private void OnDestroy()
+    {
+        enemyPrefab.OnEnemyHit -= PetHit;
+        Pet.OnEvolve -= LevelUpIndicator;
     }
     private void PetHit()
     {
@@ -27,18 +36,16 @@ public class GameManager : MonoBehaviour
         currNum++;
         numEnemyHits.SetText(((int)currNum).ToString());
     }
+    private void LevelUpIndicator(int level)
+    {
+        int newLevel = level;
+        StartCoroutine(showLevelUpUI());
+    }
 
-    //public UnityEvent onKeyPressed;
-
-    //void Update()
-    //{
-    //    foreach (KeyCode key in triggerKeys)
-    //    {
-    //        if (Input.GetKeyDown(key))
-    //        {
-    //            onKeyPressed?.Invoke();
-    //            return;
-    //        }
-    //    }
-    //}
+    private IEnumerator showLevelUpUI()
+    {
+        LevelUpUI.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        LevelUpUI.SetActive(false);
+    }
 }
