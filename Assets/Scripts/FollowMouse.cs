@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FollowMouse : MonoBehaviour
 {
@@ -21,6 +22,11 @@ public class FollowMouse : MonoBehaviour
         Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
 
         transform.position = worldPos;
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Quit Screen");
+        }
     }
     private void OnMouseDown()
     {

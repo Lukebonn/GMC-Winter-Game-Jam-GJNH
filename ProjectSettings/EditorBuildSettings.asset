@@ -18,10 +18,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Storyboard1.unity
     guid: 5f1df76d0ba5c6c4a86e3845b1fb049f
   - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
-    guid: 2d2040bb93d2f5a4fb3ba6c50568f825
-  - enabled: 1
     path: Assets/Scenes/Win Screen.unity
     guid: 507533e43135c3147be41202f52550e6
+  - enabled: 1
+    path: Assets/Scenes/Quit Screen.unity
+    guid: bfa63bff70552814f84dbecd3e61a1ab
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

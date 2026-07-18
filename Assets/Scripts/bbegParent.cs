@@ -80,6 +80,10 @@ public class bbegParent : MonoBehaviour
             spawnEnemy();
 
             yield return new WaitForSeconds(spawnDelay);
+            if (spawnDelay >= 10)
+            {
+                spawnDelay -= 2;
+            }
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Collections;
 public class PetManager : MonoBehaviour
 {
     [SerializeField] private GameObject enemyDropzoneObject;
-    [SerializeField] int pointsPerEnemy = 5;
+    [SerializeField] int pointsPerEnemy = 40;
     [SerializeField] private Pet pet;
 
     private BoxCollider2D enemyDropZone;

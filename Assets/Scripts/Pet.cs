@@ -1,23 +1,31 @@
-using UnityEngine;
-using System.Collections.Generic;
-using System.Collections;
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
-using UnityEngine.UIElements;
+using Unity.Cinemachine;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class Pet : MonoBehaviour
 {
-    public float currHealth = 20;
+    public float currHealth = 30;
     public float MaxHealth = 100;
-    public float hungerDepreciationPerSecond = 1;
+    public float hungerDepreciationPerSecond = 2;
     [SerializeField] List<Sprite> evolutions;
 
     [SerializeField] private HealthBarUI healthBar;
 
     private int evolutionNum;
     public static event Action<int> OnEvolve;
+
+    // On devolve > 3 make the screen smaller
+    [SerializeField] private CinemachineCamera cinemachineCamera;
+    private int devolveTotal;
+    private bool easyMode;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -25,6 +33,9 @@ public class Pet : MonoBehaviour
         StartCoroutine(Hunger());
         evolutionNum = 0;
         GetComponent<SpriteRenderer>().sprite = evolutions[evolutionNum];
+        devolveTotal = 0;
+        easyMode = false;
+        cinemachineCamera.Lens.OrthographicSize = 7;
     }
 
     void Update()
@@ -36,6 +47,10 @@ public class Pet : MonoBehaviour
         if (Input.GetKeyDown("l"))
         {
             SetHealth(20f);
+        }
+        if (devolveTotal >= 3 && !easyMode)
+        {
+            cinemachineCamera.Lens.OrthographicSize = 10;
         }
     }
 
@@ -83,6 +98,7 @@ public class Pet : MonoBehaviour
         evolutionNum--;
         currHealth = 100;
         GetComponent<SpriteRenderer>().sprite = evolutions[evolutionNum];
+        devolveTotal++;
     }
 
     IEnumerator Hunger()

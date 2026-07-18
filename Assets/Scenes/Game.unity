@@ -8258,9 +8258,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ca7fadd3d7d0643a11b774afa8d1f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  currHealth: 20
+  currHealth: 30
   MaxHealth: 100
-  hungerDepreciationPerSecond: 1
+  hungerDepreciationPerSecond: 2
   evolutions:
   - {fileID: 21300000, guid: e5e353610661bc445874bc764338ab38, type: 3}
   - {fileID: 21300000, guid: 70c9b6b0e34d71847914ea47390f0019, type: 3}
@@ -8268,6 +8268,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dc49883c382060744b537def49bd7a35, type: 3}
   - {fileID: 21300000, guid: 34aeca2d566b228448825a2a64740071, type: 3}
   healthBar: {fileID: 1933116997}
+  cinemachineCamera: {fileID: 519420035}
 --- !u!1 &1355940066
 GameObject:
   m_ObjectHideFlags: 0
@@ -9178,7 +9179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   enemyDropzoneObject: {fileID: 48309797}
-  pointsPerEnemy: 20
+  pointsPerEnemy: 40
   pet: {fileID: 1334226414}
 --- !u!1 &1560994767
 GameObject:
@@ -13867,12 +13868,12 @@ MonoBehaviour:
   - {fileID: 2070425330}
   - {fileID: 1767387249}
   - {fileID: 1654678815}
-  enemyCount: 2
+  enemyCount: 4
   enemyPrefab: {fileID: 2085031139136183168}
-  spawnDelay: 3
+  spawnDelay: 20
   speed: 4
-  enemyHideDelayMin: 1
-  enemyHideDelayMax: 5
+  enemyHideDelayMin: 3
+  enemyHideDelayMax: 10
 --- !u!4 &1245867284546806139
 Transform:
   m_ObjectHideFlags: 0
@@ -14040,12 +14041,12 @@ MonoBehaviour:
   - {fileID: 96788415}
   - {fileID: 859732383}
   - {fileID: 978511691}
-  enemyCount: 2
+  enemyCount: 4
   enemyPrefab: {fileID: 359110250435177717}
-  spawnDelay: 3
+  spawnDelay: 20
   speed: 4
-  enemyHideDelayMin: 1
-  enemyHideDelayMax: 5
+  enemyHideDelayMin: 3
+  enemyHideDelayMax: 10
 --- !u!1 &1731570661947943398
 GameObject:
   m_ObjectHideFlags: 0
@@ -14612,12 +14613,12 @@ MonoBehaviour:
   - {fileID: 135569086}
   - {fileID: 749265355}
   - {fileID: 1355940067}
-  enemyCount: 2
+  enemyCount: 4
   enemyPrefab: {fileID: 2970192721786575390}
-  spawnDelay: 3
+  spawnDelay: 20
   speed: 4
-  enemyHideDelayMin: 1
-  enemyHideDelayMax: 5
+  enemyHideDelayMin: 3
+  enemyHideDelayMax: 7
 --- !u!114 &4246472801360223058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15031,12 +15032,12 @@ MonoBehaviour:
   - {fileID: 2108380508}
   - {fileID: 267030374}
   - {fileID: 1781186953}
-  enemyCount: 2
+  enemyCount: 4
   enemyPrefab: {fileID: 5739274508000731722}
-  spawnDelay: 3
+  spawnDelay: 20
   speed: 4
-  enemyHideDelayMin: 1
-  enemyHideDelayMax: 5
+  enemyHideDelayMin: 3
+  enemyHideDelayMax: 10
 --- !u!58 &6763551940761455474
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -15181,12 +15182,12 @@ MonoBehaviour:
   - {fileID: 454545609}
   - {fileID: 887917276}
   - {fileID: 1560994768}
-  enemyCount: 2
+  enemyCount: 4
   enemyPrefab: {fileID: 8138329257816306654}
-  spawnDelay: 3
+  spawnDelay: 20
   speed: 4
-  enemyHideDelayMin: 1
-  enemyHideDelayMax: 5
+  enemyHideDelayMin: 3
+  enemyHideDelayMax: 10
 --- !u!61 &7365271315544586024
 BoxCollider2D:
   m_ObjectHideFlags: 0
