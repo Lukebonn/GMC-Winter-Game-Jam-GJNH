@@ -13,6 +13,13 @@ public class HealthBarUI : MonoBehaviour
     [SerializeField]
     private RectTransform healthBar;
 
+    private Image healthBarImage;
+
+    private void Awake()
+    {
+        healthBarImage = healthBar.GetComponent<Image>();
+    }
+
     public void SetMaxHealth(float maxHealth)
     {
         MaxHealth = maxHealth;
@@ -24,5 +31,19 @@ public class HealthBarUI : MonoBehaviour
         float newWidth = (Health / MaxHealth) * Width;
 
         healthBar.sizeDelta = new Vector2(newWidth, Height);
+
+        //StartCoroutine(FlashGreen(health));
+    }
+
+    public IEnumerator FlashGreen(float health)
+    {
+        if (health >= 0)
+        {
+            healthBarImage.color = Color.green;
+            yield return new WaitForSeconds(1f);
+            healthBarImage.color = Color.red;
+        }
+        yield return null;
     }
 }
+ 

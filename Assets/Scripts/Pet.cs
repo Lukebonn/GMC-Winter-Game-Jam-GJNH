@@ -8,17 +8,22 @@ using UnityEngine.UIElements;
 
 public class Pet : MonoBehaviour
 {
-    public float Health = 20;
+    public float currHealth = 20;
     public float MaxHealth = 100;
     public float hungerDepreciationPerSecond = 1;
+    [SerializeField] List<Sprite> evolutions;
 
-    [SerializeField]
-    private HealthBarUI healthBar;
+    [SerializeField] private HealthBarUI healthBar;
+
+    private int evolutionNum;
+    public static event Action<int> OnEvolve;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
         healthBar.SetMaxHealth(MaxHealth);
         StartCoroutine(Hunger());
+        evolutionNum = 0;
+        GetComponent<SpriteRenderer>().sprite = evolutions[evolutionNum];
     }
 
     void Update()
@@ -31,15 +36,39 @@ public class Pet : MonoBehaviour
         {
             SetHealth(20f);
         }
-        
     }
 
     public void SetHealth(float healthChange)
     {
-        Health += healthChange;
-        Health = Mathf.Clamp(Health, 0, MaxHealth);
+        currHealth += healthChange;
 
-        healthBar.SetHealth(Health);
+        if (currHealth >= 100)
+        {
+            Evolve();
+        }
+        if (currHealth <= 0)
+        {
+            Devolve();
+        }
+
+        healthBar.SetHealth(currHealth);
+        healthBar.FlashGreen(healthChange);
+    }
+
+    public void Evolve()
+    {
+        evolutionNum++;
+        OnEvolve?.Invoke(evolutionNum);
+        currHealth = 20;
+        GetComponent<SpriteRenderer>().sprite = evolutions[evolutionNum];
+    }
+
+    public void Devolve()
+    {
+        evolutionNum--;
+        OnEvolve?.Invoke(evolutionNum);
+        currHealth = 20;
+        GetComponent<SpriteRenderer>().sprite = evolutions[evolutionNum];
     }
 
     IEnumerator Hunger()

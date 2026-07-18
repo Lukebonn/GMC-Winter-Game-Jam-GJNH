@@ -8,7 +8,7 @@ public class DragAll : MonoBehaviour
     private GameObject draggingObject;
     private enemyPrefab EnemyPrefab;
 
-    public static event Action<Vector2> OnEnemyDropped;
+    public static event Action<Vector2, enemyPrefab> OnEnemyDropped;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -45,7 +45,7 @@ public class DragAll : MonoBehaviour
             }
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            OnEnemyDropped?.Invoke(mousePos);
+            OnEnemyDropped?.Invoke(mousePos, EnemyPrefab);
         }
 
         if (dragging != null)

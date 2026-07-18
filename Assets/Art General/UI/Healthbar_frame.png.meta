@@ -103,12 +103,12 @@ TextureImporter:
       name: Healthbar_frame_0
       rect:
         serializedVersion: 2
-        x: 269
-        y: 95
-        width: 1394
-        height: 110
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 23afbeec83dd4e648918ba2f38d41153
     internalID: 0
     vertices: []
     indices: 

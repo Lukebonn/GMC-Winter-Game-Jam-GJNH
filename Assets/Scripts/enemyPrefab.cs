@@ -63,15 +63,6 @@ public class enemyPrefab : MonoBehaviour
         }
     }
 
-    //private void OnMouseDown()
-    //{
-    //    offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    //    grabbed = true;
-    //}
-    //private void OnMouseUp()
-    //{
-    //    grabbed = false;
-    //}
     public void GrabEnemy()
     {
         grabbed = true;
@@ -81,6 +72,11 @@ public class enemyPrefab : MonoBehaviour
     {
         grabbed = false;
         Debug.Log("Enemy released");
+    }
+
+    public void destroyEnemy()
+    {
+        Destroy(gameObject);
     }
 
     // Enemy standard traversal movement
