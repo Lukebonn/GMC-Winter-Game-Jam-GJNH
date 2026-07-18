@@ -1,7 +1,17 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class FollowMouse : MonoBehaviour
 {
+    [SerializeField] private Sprite closedHand;
+    [SerializeField] private Sprite openHand;
+
+    private SpriteRenderer sr;
+
+    void Awake()
+    {
+        sr = GetComponent<SpriteRenderer>();
+    }
     void Update()
     {
         Vector3 mousePos = Input.mousePosition;
@@ -10,5 +20,13 @@ public class FollowMouse : MonoBehaviour
         Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
 
         transform.position = worldPos;
+    }
+    private void OnMouseDown()
+    {
+        sr.sprite = closedHand;
+    }
+    private void OnMouseUp()
+    {
+        sr.sprite = openHand;
     }
 }

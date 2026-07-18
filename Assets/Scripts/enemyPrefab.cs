@@ -25,10 +25,13 @@ public class enemyPrefab : MonoBehaviour
 
     // Dragging stuff
     private BoxCollider2D enemyCollider;
+    private SpriteRenderer sr;
 
     void Awake()
     {
         enemyCollider = GetComponent<BoxCollider2D>();
+        sr = GetComponent<SpriteRenderer>();
+        sr.enabled = false;
     }
 
     public void Initialize(
@@ -132,7 +135,9 @@ public class enemyPrefab : MonoBehaviour
 
             // Traveling to the way point
             transform.right = direction;
+            sr.enabled = true;
             running = true;
+            hiding = false;
 
             while ((nextPos - transform.position).sqrMagnitude > 0.01f)
             {
@@ -145,6 +150,8 @@ public class enemyPrefab : MonoBehaviour
                 yield return null;
             }
             running = false;
+            hiding = true;
+            sr.enabled = false;
             currentWaypoint++;
             yield return new WaitForSeconds(delay);
         }

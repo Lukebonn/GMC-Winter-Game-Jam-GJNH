@@ -5,6 +5,7 @@ using System;
 using System.IO;
 using System.Linq;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class Pet : MonoBehaviour
 {
@@ -57,6 +58,10 @@ public class Pet : MonoBehaviour
 
     public void Evolve()
     {
+        if (evolutionNum >= 4)
+        {
+            SceneManager.LoadScene("Win Screen");
+        }
         evolutionNum++;
         OnEvolve?.Invoke(evolutionNum);
         currHealth = 20;
@@ -65,6 +70,10 @@ public class Pet : MonoBehaviour
 
     public void Devolve()
     {
+        if (evolutionNum <= 0)
+        {
+            SceneManager.LoadScene("Lose Screen");
+        }
         evolutionNum--;
         OnEvolve?.Invoke(evolutionNum);
         currHealth = 20;
