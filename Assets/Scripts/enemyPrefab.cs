@@ -78,12 +78,12 @@ public class enemyPrefab : MonoBehaviour
     public void GrabEnemy()
     {
         grabbed = true;
-        Debug.Log("Enemy Grabbed");
+        //Debug.Log("Enemy Grabbed");
     }
     public void ReleaseGrabbedEnemy()
     {
         grabbed = false;
-        Debug.Log("Enemy released");
+        //Debug.Log("Enemy released");
     }
 
     private void OnTriggerEnter2D(Collider2D other)

@@ -21,15 +21,8 @@ public class StartMenu : MonoBehaviour
     {
         Application.Quit();
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void Credits()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        SceneManager.LoadScene("Credits");
     }
 }

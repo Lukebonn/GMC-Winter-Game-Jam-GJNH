@@ -1,7 +1,8 @@
-using Unity.VisualScripting;
-using UnityEngine;
+using System;
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
+using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI numEnemyHits;
     [SerializeField] private GameObject LevelUpUI;
     private float currNum = 0f;
+
     void Start()
     {
         spawning = true;

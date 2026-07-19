@@ -43,6 +43,10 @@ public class PetManager : MonoBehaviour
     private IEnumerator DestroyEnemyAfterDelay(enemyPrefab enemy)
     {
         yield return new WaitForSeconds(1f);
-        enemy.destroyEnemy();
+
+        if (enemy != null)
+        {
+            enemy.destroyEnemy();
+        }
     }
 }
