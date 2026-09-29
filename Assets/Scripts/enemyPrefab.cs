@@ -83,6 +83,7 @@ public class enemyPrefab : MonoBehaviour
     public void ReleaseGrabbedEnemy()
     {
         grabbed = false;
+
         //Debug.Log("Enemy released");
     }
 

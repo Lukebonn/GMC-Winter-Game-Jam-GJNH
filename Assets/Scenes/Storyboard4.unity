@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f51f1fd6f0e8a04d9db41fd3b21a6fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  NextScene: Game
+  NextScene: Tutorial1
 --- !u!82 &109234212
 AudioSource:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
-using UnityEngine;
+using System;
 using System.Collections;
+using UnityEngine;
 
 public class PetManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class PetManager : MonoBehaviour
     [SerializeField] private Pet pet;
 
     private BoxCollider2D enemyDropZone;
+    public static event Action OnTutorialFinished;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -42,6 +44,7 @@ public class PetManager : MonoBehaviour
         {
             pet.SetHealth(pointsPerEnemy);
             StartCoroutine(DestroyTutotrialEnemyAfterDelay(tutorialEnemyPrefab));
+            OnTutorialFinished?.Invoke();
         }
     }
 

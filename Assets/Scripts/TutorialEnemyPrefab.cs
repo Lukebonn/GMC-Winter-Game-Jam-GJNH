@@ -79,11 +79,13 @@ public class TutorialEnemyPrefab : MonoBehaviour
     public void GrabEnemy()
     {
         grabbed = true;
+        running = false;
         //Debug.Log("Enemy Grabbed");
     }
     public void ReleaseGrabbedEnemy()
     {
         grabbed = false;
+        running = true;
         //Debug.Log("Enemy released");
     }
 
