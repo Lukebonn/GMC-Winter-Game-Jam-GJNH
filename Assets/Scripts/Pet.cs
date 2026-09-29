@@ -35,7 +35,10 @@ public class Pet : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = evolutions[evolutionNum];
         devolveTotal = 0;
         easyMode = false;
-        cinemachineCamera.Lens.OrthographicSize = 7;
+        if (cinemachineCamera)
+        {
+            cinemachineCamera.Lens.OrthographicSize = 7;
+        }
     }
 
     void Update()
@@ -50,7 +53,10 @@ public class Pet : MonoBehaviour
         }
         if (devolveTotal >= 3 && !easyMode)
         {
-            cinemachineCamera.Lens.OrthographicSize = 10;
+            if (cinemachineCamera)
+            {
+                cinemachineCamera.Lens.OrthographicSize = 10;
+            }
         }
     }
 

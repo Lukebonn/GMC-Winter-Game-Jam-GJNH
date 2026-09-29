@@ -17,11 +17,13 @@ public class PetManager : MonoBehaviour
     private void OnEnable()
     {
         DragAll.OnEnemyDropped += HandleRelease;
+        DragAll.OnTutorialEnemyDropped += HandleTutorialRelease;
     }
 
     private void OnDisable()
     {
         DragAll.OnEnemyDropped -= HandleRelease;
+        DragAll.OnTutorialEnemyDropped -= HandleTutorialRelease;
     }
 
     private void HandleRelease(Vector2 position, enemyPrefab EnemyPrefab)
@@ -33,6 +35,15 @@ public class PetManager : MonoBehaviour
             StartCoroutine(DestroyEnemyAfterDelay(EnemyPrefab));
         }
     }
+    private void HandleTutorialRelease(Vector2 position, TutorialEnemyPrefab tutorialEnemyPrefab)
+    {
+        Vector2 mousePos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+        if (enemyDropZone.OverlapPoint(position))
+        {
+            pet.SetHealth(pointsPerEnemy);
+            StartCoroutine(DestroyTutotrialEnemyAfterDelay(tutorialEnemyPrefab));
+        }
+    }
 
     // Update is called once per frame
     void Update() 
@@ -41,6 +52,15 @@ public class PetManager : MonoBehaviour
     }
 
     private IEnumerator DestroyEnemyAfterDelay(enemyPrefab enemy)
+    {
+        yield return new WaitForSeconds(1f);
+
+        if (enemy != null)
+        {
+            enemy.destroyEnemy();
+        }
+    }
+    private IEnumerator DestroyTutotrialEnemyAfterDelay(TutorialEnemyPrefab enemy)
     {
         yield return new WaitForSeconds(1f);
 
